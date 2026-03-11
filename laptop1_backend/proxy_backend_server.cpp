@@ -78,6 +78,11 @@ public:
         }
 
         server_ = builder.BuildAndStart();
+        if (!server_) {
+            std::cerr << "\n[!] FATAL ERROR: Failed to bind to ports 50051-50058. Address already in use!" << std::endl;
+            std::cerr << "[!] Please run 'pkill -9 proxy_backend_server kv_server' to clear zombie processes." << std::endl;
+            exit(1);
+        }
         std::cout << ">>> NGINX PROXY BACKEND ACTIVE: INSECURE + NO JWT <<<" << std::endl;
         std::cout << ">>> Listening on ports 50051-50058 <<<" << std::endl;
 
