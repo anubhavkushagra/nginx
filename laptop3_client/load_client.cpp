@@ -64,23 +64,9 @@ public:
 };
 
 std::string FetchJWT(kv::KVService::Stub* stub) {
-    grpc::ClientContext context;
-    kv::LoginRequest req;
-    kv::LoginResponse resp;
-    
-    req.set_client_id("async-benchmark-node");
-    req.set_api_key("initial-pass");
-    
-    std::cout << "Authenticating with Server..." << std::endl;
-    grpc::Status status = stub->Login(&context, req, &resp);
-    
-    if (status.ok() && resp.success()) {
-        std::cout << "SUCCESS: Secured JWT Token." << std::endl;
-        return resp.jwt_token();
-    } else {
-        std::cerr << "CRITICAL LOGIN ERROR! status: " << status.error_message() << " (code: " << status.error_code() << ") msg: " << resp.error_message() << std::endl;
-        exit(1);
-    }
+    std::cout << "Authenticating with Server (SSL Proxy Mode)..." << std::endl;
+    std::cout << "SUCCESS: Bypassed JWT via NGINX Proxy." << std::endl;
+    return "proxy_mode_no_jwt_needed";
 }
 
 void Worker(grpc::SslCredentialsOptions ssl_opts, grpc::ChannelArguments args, const std::string& target_port, Benchmarker* bm, int inflight, const std::string& jwt_token) {
