@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/proxy_backend_server.dir/proxy_backend_server.cpp.o CMakeFiles/proxy_backend_server.dir/generated/kv.grpc.pb.cc.o CMakeFiles/proxy_backend_server.dir/generated/kv.pb.cc.o -o proxy_backend_server  -lgrpc++ -lgrpc -lprotobuf -lrocksdb -lOpenSSL::SSL -lOpenSSL::Crypto 

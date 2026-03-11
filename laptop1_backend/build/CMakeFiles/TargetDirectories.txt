@@ -1,0 +1,3 @@
+/home/anubhav/kv_server/Nginx/laptop1_backend/build/CMakeFiles/proxy_backend_server.dir
+/home/anubhav/kv_server/Nginx/laptop1_backend/build/CMakeFiles/edit_cache.dir
+/home/anubhav/kv_server/Nginx/laptop1_backend/build/CMakeFiles/rebuild_cache.dir
